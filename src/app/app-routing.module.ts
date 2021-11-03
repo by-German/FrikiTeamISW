@@ -15,6 +15,7 @@ import {OptionalInformationComponent} from "./pages/create-event/optional-inform
 import {UserComponent} from "./pages/users/side/user.component";
 import {FavoriteComponent} from "./pages/favorites/side/favorite.component";
 import {FollowsComponent} from "./pages/favorites/follows/follows.component";
+import {EventCommentsComponent} from "./pages/event/event-comments/event-comments.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
     children: [
       { path: '', component: EventInformationComponent },
       { path: 'information', component: EventInformationComponent },
-      { path: 'location', component: EventLocationComponent}
+      { path: 'location', component: EventLocationComponent },
+      { path: 'comments', component: EventCommentsComponent }
     ]
   },
   { path: 'create-event', component: CreateEventComponent,
