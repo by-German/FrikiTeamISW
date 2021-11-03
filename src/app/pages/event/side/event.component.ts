@@ -166,5 +166,14 @@ export class EventComponent implements OnInit {
     document.getElementsByClassName("dialog")[0].style.visibility = 'hidden';
     return
   }
+
+  /*
+  * Event comments
+  * */
+
+  renderComments(id: number): void {
+    this.router.navigate(['/events/'+id+'/comments'])
+      .then(() => console.log('Navigate to event comments with id' + id));
+  }
 }
 
