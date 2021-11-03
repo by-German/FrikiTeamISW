@@ -50,6 +50,7 @@ import { UserComponent } from './pages/users/side/user.component';
 import { FavoriteComponent } from './pages/favorites/side/favorite.component';
 import { FollowsComponent } from './pages/favorites/follows/follows.component';
 import { NgxStripeModule } from 'ngx-stripe';
+import { EventCommentsComponent } from './pages/event/event-comments/event-comments.component';
 
 
 const firebaseConfig = {
@@ -80,6 +81,7 @@ const firebaseConfig = {
     UserComponent,
     FavoriteComponent,
     FollowsComponent,
+    EventCommentsComponent,
   ],
   imports: [
     BrowserModule,
