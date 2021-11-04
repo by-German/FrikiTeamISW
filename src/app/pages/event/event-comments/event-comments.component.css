@@ -1,0 +1,50 @@
+.container {
+  border: 1px solid red;
+  min-width: 45vw;
+}
+
+.form {
+  border: 1px solid green;
+  min-width: 90%;
+}
+
+.comment-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.comment-box {
+  width: 60%;
+}
+
+/*.comentarios {*/
+/*  width: 500px;*/
+/*}*/
+
+
+
+/*button*/
+::ng-deep .mat-raised-button {
+  background-color: #726dc2;
+  color: white;
+}
+::ng-deep .mat-button-disabled {
+  background-color: #383845 !important;
+  color: white !important;
+}
+
+/*fields*/
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #726dc2 !important;
+}
+::ng-deep.mat-form-field-ripple {
+  background-color: white !important;;
+}
+::ng-deep .mat-form-field .mat-form-field-flex {
+  background-color: white;
+}
+::ng-deep .mat-form-field-disabled .mat-form-field-flex  {
+  background-color: white !important;
+}

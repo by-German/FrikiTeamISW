@@ -10,7 +10,7 @@ export class EventCommentsService {
   constructor(private http: HttpClient) { }
 
   createComment(eventId: number, userId: number, item: any) {
-    return this.http.post(`${BASE_PATH}/events/${eventId}/comments`, item)
+    return this.http.post(`${BASE_PATH}/events/${eventId}/users/${userId}/comments`, item)
   }
 
   getCommentsByEventId(eventId: number) {
