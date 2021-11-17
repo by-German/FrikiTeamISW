@@ -10,6 +10,7 @@ import {TokenStorageService} from "../../../services/token-storage.service";
 import {PaymentService} from "../../../services/Payment/payment.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import { StripeService, StripeCardComponent } from 'ngx-stripe';
+import {EventsTypeService} from "../../../services/event/events-type.service";
 
 @Component({
   selector: 'app-event',
@@ -24,6 +25,7 @@ export class EventComponent implements OnInit {
   itineraries : any
   followingEvent : Boolean = false
   followingOrganizer: Boolean = false
+  tagName: string = ''
 
   constructor(private organizersApi : OrganizersApiService,
               private itinerariesApi : EventItinerariesApiService,
@@ -35,7 +37,8 @@ export class EventComponent implements OnInit {
               private route: ActivatedRoute,
               private eventsApi: EventsApiService,
               private fb: FormBuilder,
-              private stripeService: StripeService) {
+              private stripeService: StripeService,
+              private tagService: EventsTypeService) {
 
     this.organizer = {} as Organizer
     this.eventId = this.route.snapshot.params.id
@@ -61,6 +64,11 @@ export class EventComponent implements OnInit {
           this.organizer = result;
           if (this.user) this.isFollowingOrganizer()
         }));
+
+      // tag name
+      this.tagService.getTagById(result.id).subscribe(
+        (res: any) => this.tagName = res.name
+      )
     })
 
     this.itinerariesApi.getAllByEventId(this.eventId)

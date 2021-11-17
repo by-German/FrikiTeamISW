@@ -14,6 +14,22 @@
 .not-border {
   border: 0;
 }
+
+.chip {
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border: 1px solid #464361;
+  display: flex;
+  align-items: center;
+}
+.chip-content {
+  padding-bottom: 4px;
+  font-size: 15px;
+  color: white;
+}
+
 /**
  Sidenav content
  */
