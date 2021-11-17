@@ -52,7 +52,6 @@ export class EventComponent implements OnInit {
     if (this.user ) this.formPay = this.fb.group({email: [this.user.username, [Validators.required, Validators.email]]});
     else this.formPay = this.fb.group({email: ['', [Validators.required, Validators.email]]});
 
-
     this.eventsApi.getEventById(this.eventId).subscribe((result: any) => {
       // event
       this.event = result;
