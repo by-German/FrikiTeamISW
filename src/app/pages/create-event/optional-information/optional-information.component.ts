@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 import {TokenStorageService} from "../../../services/token-storage.service";
+import {EventsTypeService} from "../../../services/event/events-type.service";
 
 @Component({
   selector: 'app-optional-information',
@@ -12,15 +13,33 @@ import {TokenStorageService} from "../../../services/token-storage.service";
 export class OptionalInformationComponent implements OnInit {
   form = new FormGroup({
     website: new FormControl(''),
+    tag: new FormControl('')
   })
 
-  constructor(private router: Router, private authService: AuthService, private tokenStorageService: TokenStorageService) {
+  eventId : number = -1;
+
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private authService: AuthService,
+              private tokenStorageService: TokenStorageService,
+              private tagService: EventsTypeService) {
   }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {
+    this.eventId = this.route.snapshot.params.id
+  }
 
-  onSubmit(): void {
-    this.router.navigate([`events`]);
+
+  onSubmit() {
+    if (this.form.value.tag.length != 0) {
+      this.tagService.createTag(this.form.value.tag)
+        .subscribe((value: any) => {
+          this.tagService.assignTagToEvent(this.eventId, value.id)
+            .subscribe((res : any) => {
+              console.log(res)
+          })
+        })
+    }
   }
 
 }
