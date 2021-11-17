@@ -45,6 +45,10 @@
 
     <h1>{{event.name}}</h1>
 
+    <div *ngIf="tagName != ''" class="chip">
+      <div class="chip-content">{{ tagName }}</div>
+    </div>
+
     <div class="divider"></div>
 
     <div class="event-options">

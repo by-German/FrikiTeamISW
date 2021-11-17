@@ -18,7 +18,7 @@ export class EventsTypeService {
   }
 
   getTagById(id: number) {
-    return this.http.get(`${BASE_PATH}/type-events/${id}`)
+    return this.http.get(`${BASE_PATH}/event-types/${id}`)
   }
 
   getAllTags() {
