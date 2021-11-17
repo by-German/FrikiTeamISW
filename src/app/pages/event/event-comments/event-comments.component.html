@@ -1,1 +1,33 @@
-<p>event-comments works!</p>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form"
+        enctype="multipart/form-data">
+
+    <h2 style="font-size: 25px">Comments</h2>
+
+    <div class="comment-container">
+      <mat-form-field appearance="fill" class="comment-box">
+        <mat-label>Leave a Comment</mat-label>
+        <textarea matInput formControlName="comment" #a style="color: black"></textarea>
+        <mat-hint align="end"><p>{{a.value.length}} / 130</p></mat-hint>
+      </mat-form-field>
+      <button mat-raised-button
+              type="button"
+              class="btn-submit"
+              (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<div class="comentarios"  *ngFor="let obj of rev_comments" >
+  <mat-card>
+    <mat-card-title style="font-size: 18px">{{obj.user.firstName}} {{obj.user.lastName}}</mat-card-title>
+    <mat-card-content>
+      {{obj.comment}}
+    </mat-card-content>
+  </mat-card>
+  <br>
+</div>
+
