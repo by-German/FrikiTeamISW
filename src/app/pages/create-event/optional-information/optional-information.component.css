@@ -2,6 +2,9 @@ h2 {
   color: #726dc2;
   margin-top: 30px;
 }
+h3 {
+  color: #8BB0E8;
+}
 
 .container {
   display: flex;
@@ -22,10 +25,6 @@ h2 {
 mat-form-field {
   width: 100%;
 }
-
-
-
-
 
 /*button*/
 ::ng-deep .mat-raised-button {

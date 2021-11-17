@@ -1,8 +1,21 @@
 <div class="container">
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <h2>Optional information</h2>
 
-    <h2>Official page of the event</h2>
+    <h3>Assign a tag to your event</h3>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Select or write your tag</mat-label>
+      <input type="text" matInput [formControl]="tagControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <h3>Official page of the event</h3>
 
     <mat-form-field appearance="fill">
       <mat-label>insert link to the event page here</mat-label>
