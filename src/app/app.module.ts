@@ -43,6 +43,8 @@ import { EventInformationComponent } from './pages/event/event-information/event
 import { GeneralInformationComponent } from './pages/create-event/general-information/general-information.component';
 import { DetailedInformationComponent } from './pages/create-event/detailed-information/detailed-information.component';
 import { OptionalInformationComponent } from './pages/create-event/optional-information/optional-information.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
 // Import the functions you need from the SDKs you need
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
@@ -129,6 +131,7 @@ const firebaseConfig = {
     MatTabsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireStorageModule,
+    MatAutocompleteModule,
     AgmCoreModule.forRoot({apiKey: 'AIzaSyCtz7v_IiSCZxQwE0Fz6vtfuXFjseNXAJY'}),
     NgxStripeModule.forRoot('pk_test_51JkIRwHuC2BvrhslZ7rxjQD6VM9Cnqo5uUMlUOXu5L7h2j8qXhPp3yzQVbKwfyLKMlRvqGDcqC1reJVmegkNMrl400u3knGHqS'),
 

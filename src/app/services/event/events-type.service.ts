@@ -22,7 +22,7 @@ export class EventsTypeService {
   }
 
   getAllTags() {
-    return this.http.get(`${BASE_PATH}/type-events`)
+    return this.http.get(`${BASE_PATH}/event-types`)
   }
 
 }
