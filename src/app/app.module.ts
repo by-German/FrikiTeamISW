@@ -48,7 +48,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 // Import the functions you need from the SDKs you need
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFireAnalyticsModule } from "@angular/fire/compat/analytics";
+import {AngularFireAnalyticsModule, ScreenTrackingService, UserTrackingService} from "@angular/fire/compat/analytics";
 import { UserComponent } from './pages/users/side/user.component';
 import { FavoriteComponent } from './pages/favorites/side/favorite.component';
 import { FollowsComponent } from './pages/favorites/follows/follows.component';
@@ -139,7 +139,9 @@ const firebaseConfig = {
   ],
   providers: [
     authInterceptorProviders,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ScreenTrackingService,
+    UserTrackingService
   ],
   bootstrap: [ AppComponent ]
 })
