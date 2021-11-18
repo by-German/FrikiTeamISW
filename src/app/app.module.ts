@@ -48,12 +48,12 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 // Import the functions you need from the SDKs you need
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAnalyticsModule } from "@angular/fire/compat/analytics";
 import { UserComponent } from './pages/users/side/user.component';
 import { FavoriteComponent } from './pages/favorites/side/favorite.component';
 import { FollowsComponent } from './pages/favorites/follows/follows.component';
 import { NgxStripeModule } from 'ngx-stripe';
 import { EventCommentsComponent } from './pages/event/event-comments/event-comments.component';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHOyue5J5xvSQMWy0wygE3HYKvF3Lexy4",
@@ -130,6 +130,7 @@ const firebaseConfig = {
     MatMenuModule,
     MatTabsModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAnalyticsModule,
     AngularFireStorageModule,
     MatAutocompleteModule,
     AgmCoreModule.forRoot({apiKey: 'AIzaSyCtz7v_IiSCZxQwE0Fz6vtfuXFjseNXAJY'}),
